@@ -177,9 +177,9 @@ function weatherCodeToDesription(weatherCode: number) {
 
 <template>
     <div>
-        <p v-if="isLocating">Locating...</p>
+        <LoadingDisplay v-if="isLocating" text="Locating..." />
         <p v-else-if="errorMessage" class="text-red-700">{{ errorMessage }}</p>
-        <p v-else-if="isFetchingWeather">Fetching weather...</p>
+        <LoadingDisplay v-else-if="isFetchingWeather" text="Fetching weather..." />
         <div v-else>
             <div class="border border-dashed w-fit p-2 my-1">
                 <p>{{ currentWeatherShort }}</p>

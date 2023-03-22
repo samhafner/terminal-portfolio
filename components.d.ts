@@ -17,6 +17,7 @@ declare module '@vue/runtime-core' {
     HelpMessage: typeof import('./src/components/HelpMessage.vue')['default']
     LinePrefix: typeof import('./src/components/LinePrefix.vue')['default']
     Link: typeof import('./src/components/Link.vue')['default']
+    LoadingDisplay: typeof import('./src/components/LoadingDisplay.vue')['default']
     OutputHistory: typeof import('./src/components/OutputHistory.vue')['default']
     Projects: typeof import('./src/components/Commands/Projects.vue')['default']
     Quote: typeof import('./src/components/Commands/Quote.vue')['default']

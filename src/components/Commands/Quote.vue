@@ -42,13 +42,13 @@ function fetchQuote() {
 <template>
     <div>
         <div v-if="isLoading">
-            <p>Loading...</p>
+            <LoadingDisplay text="Fetching quote..." />
         </div>
         <p v-else-if="errorMessage" class="text-red-700">
             {{ errorMessage }}
         </p>
         <div v-else>
-            <p>« {{ quote }} »</p>
+            <p>{{ quote }}</p>
             <p class="text-sm">- {{ author }}</p>
         </div>
     </div>
