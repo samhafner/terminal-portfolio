@@ -3,32 +3,37 @@
 @tailwind utilities;
 
 * {
-    --color: #4f46e5;
-    /* Tailwind Indigo 600 */
+    --selectionColorBg: #4f46e5; /* Tailwind Indigo 600 */
+    --selectionColorText: #e5e7eb; /* Tailwind Gray 200 */
 }
 
 /*** Works on common browsers ***/
 ::selection {
-    background-color: var(--color);
+    background-color: var(--selectionColorBg);
+    color: var(--selectionColorText);
 }
 
 /*** Mozilla based browsers ***/
 ::-moz-selection {
-    background-color: var(--color);
+    background-color: var(--selectionColorBg);
+    color: var(--selectionColorText);
 }
 
 /***For Other Browsers ***/
 ::-o-selection {
-    background-color: var(--color);
+    background-color: var(--selectionColorBg);
+    color: var(--selectionColorText);
 }
 
 ::-ms-selection {
-    background-color: var(--color);
+    background-color: var(--selectionColorBg);
+    color: var(--selectionColorText);
 }
 
 /*** For Webkit ***/
 ::-webkit-selection {
-    background-color: var(--color);
+    background-color: var(--selectionColorBg);
+    color: var(--selectionColorText);
 }
 
 @font-face {
