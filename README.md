@@ -1,18 +1,63 @@
-# Vue 3 + TypeScript + Vite
+# Terminal-themed Portfolio by Sam Hafner
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+**This is still a work in progress!**
 
-## Recommended IDE Setup
+This is a different spin on a portfolio website. It does not have a very exciting design, or amazing animations, but it was fun building it. 
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Tech
 
-## Type Support For `.vue` Imports in TS
+- TypeScript
+- Vue
+- TailwindCSS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Features
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+- Responsive Design
+- Many commands available (e.g. about me, see a list of my projects, get the current weather)
+- Autocomplete feature
+- Get previous/next command with arrow keys
+- Some fun easer eggs
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+## Run locally
+- Make sure you have node.js and npm installed
+
+- Clone the project
+
+```bash
+git clone https://github.com/samhafner/terminal-portfolio.git
+```
+
+- Go to the project directory
+
+```bash
+cd terminal-portfolio
+```
+
+- Remove remote origin
+
+```bash
+git remote remove origin
+```
+
+- Install dependencies
+
+```bash
+npm install
+```
+
+- Start the development server
+
+```bash
+npm run dev
+```
+
+- To build the project and preview the build
+```bash
+npm run build
+npm run preview
+```
+
+## Inspiration
+
+Since I was just at the beginning of my programming jounrey, I watched a lot of videos to get some inspiration on what I could build. This portfolio was inspired by this [video](https://www.youtube.com/watch?v=KtYby2QN0kQ) from Forrest Knight.
+
