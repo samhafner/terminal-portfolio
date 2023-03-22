@@ -4,6 +4,9 @@
 
 This is a different spin on a portfolio website. It does not have a very exciting design, or amazing animations, but it was fun building it. 
 
+![image](https://user-images.githubusercontent.com/110730089/226933100-d37d8e1b-10e1-41c3-a6fe-09b252d67e9a.png)
+![image](https://user-images.githubusercontent.com/110730089/226932826-12b1ba6f-e5df-483b-a028-1dc38afb6c46.png)
+
 ## Tech
 
 - TypeScript
