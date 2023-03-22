@@ -9,19 +9,24 @@ const author = ref("")
 const errorMessage = ref("")
 
 interface Quote {
-    q: string; // quote
-    a: string; // author
-    h: string; // html code
+    _id: string;
+    content: string;
+    author: string;
+    tags: string[];
+    authorSlug: string;
+    length: number;
+    dateAdded: string;
+    dateModified: string;
 }
 
 fetchQuote()
 
 function fetchQuote() {
-    fetch("https://zenquotes.io/api/random")
+    fetch("https://api.quotable.io/quotes/random?tags=inspirational")
         .then(response => response.json())
-        .then((data: Quote) => {
-            quote.value = data.q;
-            author.value = data.a;
+        .then((data: Quote[]) => {
+            quote.value = data[0].content;
+            author.value = data[0].author;
         })
         .catch(() => {
             errorMessage.value = "Error fetching quote";
@@ -43,8 +48,8 @@ function fetchQuote() {
             {{ errorMessage }}
         </p>
         <div v-else>
-            <p>{{ quote }}</p>
-            <p>- {{ author }}</p>
+            <p>« {{ quote }} »</p>
+            <p class="text-sm">- {{ author }}</p>
         </div>
     </div>
 </template>
