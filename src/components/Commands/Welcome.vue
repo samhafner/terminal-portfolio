@@ -5,7 +5,7 @@
 <template>
     <div>
         <div class="flex items-center gap-8 p-4">
-        <pre class="leading-tight text-[0.6rem] hidden sm:block">
+        <pre class="leading-tight text-[0.6rem] hidden sm:block text-indigo-400">
                             .d$$b
                           .' TO$;\
                          /  : TP._;

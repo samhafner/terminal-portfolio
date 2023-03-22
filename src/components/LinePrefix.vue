@@ -12,7 +12,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
     <div class="select-none">
-        <span class="text-indigo-500"><span class="text-orange-500">{{ props.user }}</span>@samsportfolio:~$</span>
+        <span class="text-indigo-400"><span class="text-orange-500">{{ props.user }}</span>@samsportfolio:~$</span>
     </div>
 
 </template>
