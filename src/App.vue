@@ -103,7 +103,6 @@ function handleAutosuggestion(command: string) {
     return
   }
   filteredCommands = availableCommands.filter(c => c.cmd.startsWith(command) && c.cmd !== command && command.length > 0)
-  console.log(filteredCommands)
   if (filteredCommands.length === 1) {
     commandInput.value = filteredCommands[0].cmd
     showAutoSuggestions.value = false
