@@ -49,7 +49,7 @@ useEventListener(document, 'click', (e) => {
             <div class="flex gap-2">
                 <span class="sm:hidden">> </span>
                 <input v-model="command" id="terminal-input" ref="terminalInput" type="text" class="w-full outline-none bg-inherit text-inherit caret-indigo-600 "
-                    @keyup="keyHandler" autofocus>
+                    @keyup="keyHandler" autofocus autocomplete="off" autocapitalize="off" spellcheck="false">
             </div>
             <label for="terminal-input" class="sr-only">Terminal Command Input</label>
         </form>
