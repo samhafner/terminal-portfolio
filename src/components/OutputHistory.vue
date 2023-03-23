@@ -32,7 +32,7 @@ const commandHistory = inject("commandHistory", []) as string[];
 const similarCommands = search(
     commandName.value,
     props.availableCommands.filter(c => !c.hidden),
-    { keySelector: (obj) => obj.cmd, threshold: 0.8 },
+    { keySelector: (obj) => obj.cmd, threshold: 0.7 },
 ).map(x => `'${x.cmd}'`).slice(0, 3)
 //#endregion
 
