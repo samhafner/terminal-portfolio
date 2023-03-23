@@ -28,11 +28,12 @@ function processCommand(cmd: string) {
 
 const commandHistory = inject("commandHistory", []) as string[];
 
+// Search for similar commands, only outputting the first 3, filtering for the hidden commands
 const similarCommands = search(
     commandName.value,
-    props.availableCommands,
-    { keySelector: (obj) => obj.cmd, threshold: 0.8},
-).map(x => `'${x.cmd}'`).slice(0, 3);
+    props.availableCommands.filter(c => !c.hidden),
+    { keySelector: (obj) => obj.cmd, threshold: 0.8 },
+).map(x => `'${x.cmd}'`).slice(0, 3)
 //#endregion
 
 </script>
