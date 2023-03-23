@@ -37,7 +37,7 @@ function fetchQuote() {
 </script>
 
 <template>
-    <div>
+    <div >
         <div v-if="isLoading">
             <LoadingDisplay text="Fetching joke..." />
         </div>
@@ -50,6 +50,7 @@ function fetchQuote() {
                 <p>{{ jokeSetup }}</p>
                 <p>{{ jokeDelivery }}</p>
             </div>
+            <Source url="https://v2.jokeapi.dev/" text="JokeAPI" />
         </div>
     </div>
 </template>

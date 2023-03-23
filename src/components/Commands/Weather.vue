@@ -198,9 +198,7 @@ function weatherCodeToDesription(weatherCode: number) {
                 <p>3 day forecast:</p>
                 <p v-for="forecast in weatherForecast">{{ forecast }}</p>
             </div>
-            <p class="text-sm mt-2">Data from
-                <Link url="https://open-meteo.com/" text="Open Meteo" />.
-            </p>
+            <Source text="Open Meteo" url="https://open-meteo.com/" />
         </div>
     </div>
 </template>

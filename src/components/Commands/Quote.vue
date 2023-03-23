@@ -40,6 +40,8 @@ function fetchQuote() {
         <div v-else>
             <p>{{ quote }}</p>
             <p class="text-sm">- {{ author }}</p>
+            <Source text="Quoteable" url="https://api.quotable.io" />
+
         </div>
     </div>
 </template>
