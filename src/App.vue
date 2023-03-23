@@ -15,6 +15,7 @@ const availableCommands: Command[] = [
   { cmd: "clear", attr: false, desc: "Clear the terminal" },
   { cmd: "weather", attr: false, desc: "Display weather based on location", wait: true },
   { cmd: "quote", attr: false, desc: "Display some words of wisdom", wait: true },
+  { cmd: "joke", attr: false, desc: "Display a programming joke", wait: true },
 ]
 
 const terminalStore = useTerminalStore()
@@ -134,7 +135,7 @@ function resetAutoSuggestions() {
       <OutputHistory v-for="(command, index) in outputHistory" :command="command" :available-commands="availableCommands"
         :key="index" />
     </div>
-    <div v-if="!terminalStore.componentIsProcessing" class="flex flex-col sm:flex-row gap-x-2">
+    <div v-show="!terminalStore.componentIsProcessing" class="flex flex-col sm:flex-row gap-x-2">
       <LinePrefix />
       <TerminalInput class="flex-1" @command-enter="handleCommandInput(); resetAutoSuggestions()" v-model="commandInput"
         @command-up="browseHistory('up')" @command-down="browseHistory('down')" @command-tab="handleAutosuggestion" />
