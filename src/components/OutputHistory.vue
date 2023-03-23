@@ -13,21 +13,26 @@ const props = defineProps<{
 //#region Commands
 const commandName = ref("");
 const commandArgs = ref<string[]>([]);
+const invalidArgs = ref(false);
+
 processCommand(props.command);
 
 function processCommand(cmd: string) {
     const x = cmd.trim().split(" ");
     commandName.value = x[0];
     commandArgs.value = x.slice(1);
+    if (commandArgs.value.length > 0 && props.availableCommands.find(x => x.cmd === commandName.value)?.attr !== true) {
+        invalidArgs.value = true;
+    }
 }
 
 const commandHistory = inject("commandHistory", []) as string[];
 
 const similarCommands = search(
-    props.command,
+    commandName.value,
     props.availableCommands,
-    { keySelector: (obj) => obj.cmd },
-).map(x => `'${x.cmd}'`);
+    { keySelector: (obj) => obj.cmd, threshold: 0.8},
+).map(x => `'${x.cmd}'`).slice(0, 3);
 //#endregion
 
 </script>
@@ -41,7 +46,15 @@ const similarCommands = search(
                 <p>{{ command }}</p>
             </div>
         </div>
-        <template v-if="props.availableCommands.find(x => x.cmd === commandName)">
+        <template v-if="!props.availableCommands.find(x => x.cmd === commandName)">
+            <p>Command not found. <span v-if="similarCommands.length > 0">Did you mean: {{ similarCommands.join(" or ")
+            }}?</span> <span v-if="command.includes(`'`)">You shouldn't write the quote characters.</span></p>
+            <HelpMessage />
+        </template>
+        <div v-else-if="invalidArgs">
+            <p class="text-red-500">Error! This command does not accept arguments.</p>
+        </div>
+        <template v-else-if="props.availableCommands.find(x => x.cmd === commandName)">
             <WhoAmI v-if="commandName === 'whoami'" />
             <About v-else-if="commandName === 'about'" />
             <Projects v-else-if="commandName === 'projects'" />
@@ -55,11 +68,6 @@ const similarCommands = search(
             <Quote v-else-if="commandName === 'quote'" />
             <Joke v-else-if="commandName === 'joke'" />
             <Sudo v-else-if="commandName === 'sudo'" />
-        </template>
-        <template v-else>
-            <p>Command not found. <span v-if="similarCommands.length > 0">Did you mean: {{ similarCommands.join(" or ")
-            }}?</span> <span v-if="command.includes(`'`)">You shouldn't write the quote characters.</span></p>
-            <HelpMessage />
         </template>
     </div>
 </template>
