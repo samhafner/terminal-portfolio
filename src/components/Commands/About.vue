@@ -4,9 +4,9 @@
 </script>
 
 <template>
-    <div>
+    <div class="space-y-2">
         <p>
-            Hi, my name is Samuel Hafner. I am an aspiring web developer equipped with the right mindset to pursue my goals.
+            Hi, my name is <span class="font-bold">Samuel Hafner</span>. I am an aspiring web developer equipped with the right mindset to pursue my goals.
         </p>
         <p>
             For me, programming is more than just a simple means to an end. I love to be challenged and to constantly learn
