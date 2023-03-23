@@ -1,6 +1,15 @@
 <script setup lang="ts">
-import { Project } from '../../interfaces';
 
+interface Project {
+    name: string;
+    tech: string[];
+    year: string;
+    description: string;
+    url?: {
+        code?: string;
+        live?: string;
+    };
+}
 
 // holds the projects, newest ones are added at the end
 const projects: Project[] = [

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Quote } from '../../interfaces';
 import { useTerminalStore } from '../../stores/terminal.store';
 
 const terminalStore = useTerminalStore()
@@ -9,7 +8,16 @@ const quote = ref("")
 const author = ref("")
 const errorMessage = ref("")
 
-
+interface Quote {
+    _id: string;
+    content: string;
+    author: string;
+    tags: string[];
+    authorSlug: string;
+    length: number;
+    dateAdded: string;
+    dateModified: string;
+}
 
 fetchQuote()
 
