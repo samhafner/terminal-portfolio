@@ -9,8 +9,6 @@ const quote = ref("")
 const author = ref("")
 const errorMessage = ref("")
 
-
-
 fetchQuote()
 
 function fetchQuote() {

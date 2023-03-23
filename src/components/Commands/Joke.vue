@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { JokeSingle, JokeTwoPart } from '../../interfaces';
 import { useTerminalStore } from '../../stores/terminal.store';
 
 const terminalStore = useTerminalStore()
@@ -8,33 +9,6 @@ const joke = ref("")
 const jokeSetup = ref("")
 const jokeDelivery = ref("")
 const errorMessage = ref("")
-
-interface JokeCommon {
-  error: boolean;
-  category: string;
-  type: string;
-  flags: {
-    nsfw: boolean;
-    religious: boolean;
-    political: boolean;
-    racist: boolean;
-    sexist: boolean;
-    explicit: boolean;
-  };
-  id: number;
-  safe: boolean;
-  lang: string;
-}
-interface JokeSingle extends JokeCommon {
-  type: "single";
-  joke: string;
-}
-interface JokeTwoPart extends JokeCommon {
-  type: "twopart";
-  setup: string;
-  delivery: string;
-}
-
 
 fetchQuote()
 

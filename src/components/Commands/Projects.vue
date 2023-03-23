@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Project } from '../../interfaces';
 
-
 // holds the projects, newest ones are added at the end
 const projects: Project[] = [
     {
@@ -35,9 +34,7 @@ const projects: Project[] = [
             code: "https://github.com/samhafner/terminal-portfolio",
         }
     },
-
 ]
-
 
 </script>
 
