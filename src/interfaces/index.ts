@@ -3,4 +3,5 @@ export type Command = {
     attr: boolean;
     desc: string;
     wait?: boolean;
+    hidden?: boolean;
 };

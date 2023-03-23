@@ -9,7 +9,7 @@ const props = defineProps<{
 
 <template>
     <div class="grid grid-cols-1 sm:grid-cols-[150px_1fr] ">
-        <template v-for="(command, index) in props.commands.sort((a, b) => a.cmd.localeCompare(b.cmd))" :key="index">
+        <template v-for="(command, index) in props.commands.sort((a, b) => a.cmd.localeCompare(b.cmd)).filter( c => !c.hidden)" :key="index">
             <p class="text-sky-400">{{ command.cmd }}</p>
             <p>- {{ command.desc }}</p>
         </template>

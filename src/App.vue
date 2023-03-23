@@ -16,6 +16,7 @@ const availableCommands: Command[] = [
   { cmd: "weather", attr: false, desc: "Display weather based on location", wait: true },
   { cmd: "quote", attr: false, desc: "Display some words of wisdom", wait: true },
   { cmd: "joke", attr: false, desc: "Display a programming joke", wait: true },
+  { cmd: "sudo", attr: false, desc: "", hidden: true },
 ]
 
 const terminalStore = useTerminalStore()
@@ -101,7 +102,7 @@ function handleAutosuggestion(command: string) {
   if (!command) {
     return
   }
-  filteredCommands = availableCommands.filter(c => c.cmd.startsWith(command) && c.cmd !== command && command.length > 0)
+  filteredCommands = availableCommands.filter(c => c.cmd.startsWith(command) && c.cmd !== command && command.length > 0 && !c.hidden)
   if (filteredCommands.length === 1) {
     commandInput.value = filteredCommands[0].cmd
     showAutoSuggestions.value = false

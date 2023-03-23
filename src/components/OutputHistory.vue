@@ -54,6 +54,7 @@ const similarCommands = search(
             <Weather v-else-if="commandName === 'weather'" />
             <Quote v-else-if="commandName === 'quote'" />
             <Joke v-else-if="commandName === 'joke'" />
+            <Sudo v-else-if="commandName === 'sudo'" />
         </template>
         <template v-else>
             <p>Command not found. <span v-if="similarCommands.length > 0">Did you mean: {{ similarCommands.join(" or ")
