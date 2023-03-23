@@ -21,7 +21,7 @@ function processCommand(cmd: string) {
     const x = cmd.trim().split(" ");
     commandName.value = x[0];
     commandArgs.value = x.slice(1);
-    if (commandArgs.value.length > 0 && props.availableCommands.find(x => x.cmd === commandName.value)?.args !== true) {
+    if (commandArgs.value.length > 0 && props.availableCommands.find(x => x.cmd === commandName.value)?.attr !== true) {
         invalidArgs.value = true;
     }
 }
@@ -67,7 +67,7 @@ const similarCommands = search(
             <CommandHistory v-else-if="commandName === 'history'" :command-history="commandHistory" />
             <Weather v-else-if="commandName === 'weather'" />
             <Quote v-else-if="commandName === 'quote'" />
-            <Joke v-else-if="commandName === 'joke'" :args="commandArgs" />
+            <Joke v-else-if="commandName === 'joke'" />
             <Sudo v-else-if="commandName === 'sudo'" />
         </template>
     </div>

@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { JokeSingle, JokeTwoPart } from '../../interfaces';
 import { useTerminalStore } from '../../stores/terminal.store';
-
-const props = defineProps<{
-    args: string[];
-}>();
 
 const terminalStore = useTerminalStore()
 terminalStore.componentIsProcessing = true
@@ -13,31 +8,38 @@ const joke = ref("")
 const jokeSetup = ref("")
 const jokeDelivery = ref("")
 const errorMessage = ref("")
-const showUnsafeJoke = ref(false)
 
-function validateArgs() {
-    if (props.args.length > 1) {
-        errorMessage.value = "Too many arguments";
-        return false;
-    } if (props.args[0] !== "-unsafe") {
-        errorMessage.value = "Invalid argument";
-        return false;
-    }
-    return true;
+interface JokeCommon {
+  error: boolean;
+  category: string;
+  type: string;
+  flags: {
+    nsfw: boolean;
+    religious: boolean;
+    political: boolean;
+    racist: boolean;
+    sexist: boolean;
+    explicit: boolean;
+  };
+  id: number;
+  safe: boolean;
+  lang: string;
+}
+interface JokeSingle extends JokeCommon {
+  type: "single";
+  joke: string;
+}
+interface JokeTwoPart extends JokeCommon {
+  type: "twopart";
+  setup: string;
+  delivery: string;
 }
 
-if (validateArgs()) {
-    if (props.args[0] === "-unsafe") {
-        showUnsafeJoke.value = true;
-    }
-    fetchJoke()
-} else {
-    isLoading.value = false;
-    terminalStore.componentIsProcessing = false
-}
 
-function fetchJoke() {
-    fetch(`https://v2.jokeapi.dev/joke/Programming?${showUnsafeJoke ? '' : 'blacklistFlags=nsfw,religious,political,racist,sexist,explicit'}`)
+fetchQuote()
+
+function fetchQuote() {
+    fetch("https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
         .then(response => response.json())
         .then((data: JokeSingle | JokeTwoPart) => {
             if (data.error) {

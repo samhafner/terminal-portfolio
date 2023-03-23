@@ -1,6 +1,6 @@
 export type Command = {
     cmd: string;
-    args: boolean;
+    attr: boolean;
     desc: string;
     wait?: boolean;
     hidden?: boolean;
