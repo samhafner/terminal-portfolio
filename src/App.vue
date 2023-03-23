@@ -20,10 +20,8 @@ const availableCommands: Command[] = [
 
 const terminalStore = useTerminalStore()
 
-watch(() => terminalStore.componentIsProcessing, () => {
-  if (!terminalStore.componentIsProcessing) {
+whenever(() => !terminalStore.componentIsProcessing, () => {
     scrollToBottom()
-  }
 })
 
 // =================================================================================================

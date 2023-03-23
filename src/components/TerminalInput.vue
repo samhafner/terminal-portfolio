@@ -45,16 +45,13 @@ useEventListener(document, 'click', (e) => {
     }
 })
 
-// Focus on the input when this input is shown again after a component has finished processing
-watch(() => terminalStore.componentIsProcessing, () => {
-    if (!terminalStore.componentIsProcessing) {
-        // Wait for 500ms before focusing on the input so that the input line is scrolled into view
-        // A timeout (of at least 0ms)  is necessary otherwise the autofocus will not work
-        // 500ms works for now
-        setTimeout(() => {
-            terminalInput.value?.focus();
-        }, 500)
-    }
+whenever(() => !terminalStore.componentIsProcessing, () => {
+    // Wait for 500ms before focusing on the input so that the input line is scrolled into view
+    // A timeout (of at least 0ms)  is necessary otherwise the autofocus will not work
+    // 500ms works for now
+    setTimeout(() => {
+        terminalInput.value?.focus();
+    }, 500)
 })
 //#endregion
 

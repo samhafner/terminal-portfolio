@@ -24,6 +24,7 @@ export default defineConfig({
           '@vueuse/core': [
             'useEventListener', // import { useEventListener } from '@vueuse/core'
             'useVModel', // import { useVModel } from '@vueuse/core'
+            'whenever', // import { whenever } from '@vueuse/core'
           ],
         },
       ],
