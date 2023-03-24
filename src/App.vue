@@ -4,20 +4,20 @@ import { scrollToBottom } from './utils/functions';
 import { useTerminalStore } from './stores/terminal.store';
 
 const availableCommands: Command[] = [
-  { cmd: "about", attr: false, desc: "About me" },
-  { cmd: "echo", attr: true, desc: "Print out anything" },
-  { cmd: "history", attr: false, desc: "View command history" },
-  { cmd: "projects", attr: false, desc: "View projects that I've coded" },
-  { cmd: "welcome", attr: false, desc: "Display welcome banner" },
-  { cmd: "help", attr: false, desc: "List available commands"},
-  { cmd: "whoami", attr: false, desc: "Who are you?"},
-  { cmd: "secret", attr: false, desc: "Super secret command" },
-  { cmd: "clear", attr: false, desc: "Clear the terminal" },
-  { cmd: "weather", attr: false, desc: "Display weather based on location", wait: true },
-  { cmd: "quote", attr: false, desc: "Display some words of wisdom", wait: true },
-  { cmd: "joke", attr: false, desc: "Display a programming joke", wait: true },
+  { cmd: "about", args: false, desc: "About me" },
+  { cmd: "echo", args: true, desc: "Print out anything" },
+  { cmd: "history", args: false, desc: "View command history" },
+  { cmd: "projects", args: false, desc: "View projects that I've coded" },
+  { cmd: "welcome", args: false, desc: "Display welcome banner" },
+  { cmd: "help", args: false, desc: "List available commands"},
+  { cmd: "whoami", args: false, desc: "Who are you?"},
+  { cmd: "secret", args: false, desc: "Super secret command" },
+  { cmd: "clear", args: false, desc: "Clear the terminal" },
+  { cmd: "weather", args: false, desc: "Display weather based on location", wait: true },
+  { cmd: "quote", args: false, desc: "Display some words of wisdom", wait: true },
+  { cmd: "joke", args: false, desc: "Display a programming joke", wait: true },
   { cmd: "sudo", args: true, desc: "", hidden: true },
-  { cmd: "shit", attr: false, desc: "", hidden: true },
+  { cmd: "shit", args: false, desc: "", hidden: true },
 ]
 
 const terminalStore = useTerminalStore()

@@ -21,7 +21,7 @@ function processCommand(cmd: string) {
     const x = cmd.trim().split(" ");
     commandName.value = x[0];
     commandArgs.value = x.slice(1);
-    if (commandArgs.value.length > 0 && props.availableCommands.find(x => x.cmd === commandName.value)?.attr !== true) {
+    if (commandArgs.value.length > 0 && props.availableCommands.find(x => x.cmd === commandName.value)?.args !== true) {
         invalidArgs.value = true;
     }
 }
