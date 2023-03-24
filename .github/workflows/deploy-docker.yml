@@ -1,4 +1,4 @@
-name: Jekyll site CI
+name: Deploy project
 
 on:
   push:
@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: write
+  
 jobs:
   build:
 
