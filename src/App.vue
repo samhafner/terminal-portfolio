@@ -16,7 +16,7 @@ const availableCommands: Command[] = [
   { cmd: "weather", attr: false, desc: "Display weather based on location", wait: true },
   { cmd: "quote", attr: false, desc: "Display some words of wisdom", wait: true },
   { cmd: "joke", attr: false, desc: "Display a programming joke", wait: true },
-  { cmd: "sudo", attr: false, desc: "", hidden: true },
+  { cmd: "sudo", args: true, desc: "", hidden: true },
   { cmd: "shit", attr: false, desc: "", hidden: true },
 ]
 
