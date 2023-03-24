@@ -17,6 +17,7 @@ const availableCommands: Command[] = [
   { cmd: "quote", attr: false, desc: "Display some words of wisdom", wait: true },
   { cmd: "joke", attr: false, desc: "Display a programming joke", wait: true },
   { cmd: "sudo", attr: false, desc: "", hidden: true },
+  { cmd: "shit", attr: false, desc: "", hidden: true },
 ]
 
 const terminalStore = useTerminalStore()

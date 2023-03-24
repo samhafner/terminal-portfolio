@@ -69,6 +69,7 @@ const similarCommands = search(
             <Quote v-else-if="commandName === 'quote'" />
             <Joke v-else-if="commandName === 'joke'" />
             <Sudo v-else-if="commandName === 'sudo'" />
+            <Shit v-else-if="commandName === 'shit'" />
         </template>
     </div>
 </template>

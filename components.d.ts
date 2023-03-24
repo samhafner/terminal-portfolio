@@ -23,6 +23,7 @@ declare module '@vue/runtime-core' {
     Projects: typeof import('./src/components/Commands/Projects.vue')['default']
     Quote: typeof import('./src/components/Commands/Quote.vue')['default']
     Secret: typeof import('./src/components/Commands/Secret.vue')['default']
+    Shit: typeof import('./src/components/Commands/Shit.vue')['default']
     Source: typeof import('./src/components/Source.vue')['default']
     Sudo: typeof import('./src/components/Commands/Sudo.vue')['default']
     TerminalInput: typeof import('./src/components/TerminalInput.vue')['default']
