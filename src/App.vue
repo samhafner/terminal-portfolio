@@ -3,6 +3,7 @@ import { Command } from './interfaces';
 import { scrollToBottom } from './utils/functions';
 import { useTerminalStore } from './stores/terminal.store';
 
+
 const availableCommands: Command[] = [
   { cmd: "about", args: false, desc: "About me" },
   { cmd: "echo", args: true, desc: "Print out anything" },
